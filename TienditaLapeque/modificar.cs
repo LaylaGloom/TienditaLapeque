@@ -19,8 +19,8 @@ namespace TienditaLapeque
         }
 
         
-            String con = Conexion.getConexion();
-            MySqlConnection conexion = new MySqlConnection(con);
+          
+            public MySqlConnection conexion = new MySqlConnection();
             MySqlCommand command;
         
         
@@ -47,8 +47,7 @@ namespace TienditaLapeque
         {
             try
             {
-                Conectar();
-                openConnection();
+                
                 command = new MySqlCommand(query, conexion);
 
                 if (command.ExecuteNonQuery() == 1)
@@ -87,6 +86,7 @@ namespace TienditaLapeque
 
         private void modificar_Load(object sender, EventArgs e)
         {
+            conexion.Open();
             string selectQuery = "SELECT * FROM productos";
             DataTable tabla = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, conexion);

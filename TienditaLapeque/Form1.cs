@@ -18,22 +18,25 @@ namespace TienditaLapeque
         {
             InitializeComponent();
             timer1.Enabled = true;
-          
             
+
+
         }
 
         public   index inde = new index();
+       public MySqlConnection conexion = Conexion.getConexion();
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
             textBox2.UseSystemPasswordChar = true;
-           
+            conexion.Open();
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           MySqlConnection conexion = Conexion.getConexion();
-           conexion.Open();
            
            MySqlCommand cmd = new MySqlCommand("SELECT * FROM usuarios WHERE nombre='" + textBox1.Text + "' AND contrasena='" + textBox2.Text+"'",conexion);
            MySqlDataReader leer = cmd.ExecuteReader();
@@ -90,9 +93,9 @@ namespace TienditaLapeque
         {
             if (e.KeyCode == Keys.Enter)
             {
-                String con = Conexion.getConexion();
+                /*String con = Conexion.getConexion();
                 MySqlConnection conexion = new MySqlConnection(con);
-                conexion.Open();
+                conexion.Open();*/
                 //conexion.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT * FROM usuarios WHERE nombre='" + textBox1.Text + "' AND contrasena='" + textBox2.Text + "'", conexion);
                 MySqlDataReader leer = cmd.ExecuteReader();

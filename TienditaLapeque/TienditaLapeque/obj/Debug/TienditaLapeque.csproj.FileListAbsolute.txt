@@ -1,0 +1,17 @@
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.csprojResolveAssemblyReference.cache
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.Properties.Resources.resources
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.csproj.GenerateResource.Cache
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.csproj.CoreCompileInputs.cache
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\bin\Debug\TienditaLapeque.exe.config
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\bin\Debug\TienditaLapeque.exe
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\bin\Debug\TienditaLapeque.pdb
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\bin\Debug\MySql.Data.dll
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\bin\Debug\MySql.Data.xml
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.Form1.resources
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.Index.resources
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.exe
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.pdb
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.Productos.resources
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.Reportes.resources
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.Usuarios.resources
+D:\Datos\Escritorio\formsPanel\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.Ventas.resources
