@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using iTextSharp.text.pdf.fonts;
+
 using variablesGlobales;
 namespace TienditaLapeque
 {
@@ -16,14 +21,26 @@ namespace TienditaLapeque
         public Ventas()
         {
             InitializeComponent();
-            
             timer1.Enabled = true;
             lblus.Text = Globales.usuario;
-           
+            generarPdf();
         }
+       
         MySqlConnection connection = new MySqlConnection(@"Data Source=localhost;port=3307;Initial Catalog=sistema;User Id=root;password='1234';");
         MySqlCommand command;
-        
+        public void generarPdf()
+        {
+            iTextSharp.text.Rectangle docSize = new iTextSharp.text.Rectangle(250f, 400f);
+            PdfWriter.GetInstance(Globales.document, new FileStream("Ticket.pdf", FileMode.OpenOrCreate));
+            Globales.document.SetPageSize(docSize);
+            Globales.document.Open();
+            iTextSharp.text.Paragraph parrafo1 = new Paragraph("//Tienda de abarrotes La peque////");
+            parrafo1.Alignment = Element.ALIGN_CENTER;
+            Globales.document.Add(parrafo1);
+            Globales.document.Add(new Paragraph("Lo atendio: " + Globales.usuario));
+            Globales.document.Add(new Paragraph("Fecha de compra: " + DateTime.Now.ToLongDateString()));
+            Globales.document.Add(new Paragraph("Ticket de compra"));
+        }
 
         public void openConnection()
         {
@@ -170,6 +187,7 @@ namespace TienditaLapeque
                     populateDGV();
                     int a= Convert.ToInt32(Globales.cantidad) - Convert.ToInt32(txtcantidad.Text);
                     string updateQuery = "UPDATE productos SET cantidad=" +a +" WHERE nom_producto = '" + txtnombre.Text + "'";
+                    Globales.document.Add(new Paragraph("Producto:     " + txtnombre.Text + "   Precio: " + txtprecio.Text));
                     idmensaje = 0;
                     executeMyQuery(updateQuery);
                     actualizacionbuscar();
@@ -306,6 +324,13 @@ namespace TienditaLapeque
                 MessageBox.Show("¡Error! solo se aceptan numeros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtcantidad.Text = "";
             }
+        }
+
+        private void btnTicket_Click(object sender, EventArgs e)
+        {
+            Globales.document.Add(new Paragraph("Total de la compra:" + Globales.totalventas));
+            Globales.document.Close();
+            System.Diagnostics.Process.Start("Ticket.pdf");
         }
     }
 }

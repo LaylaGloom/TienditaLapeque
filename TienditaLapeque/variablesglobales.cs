@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +10,7 @@ namespace variablesGlobales
 {
     static class Globales
     {
+        public static Document document = new Document();
         public static string usuario;
         public static string constraseña;
         public static int ap;
