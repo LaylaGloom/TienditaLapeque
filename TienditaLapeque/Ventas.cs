@@ -30,6 +30,7 @@ namespace TienditaLapeque
         MySqlCommand command;
         public void generarPdf()
         {
+            Globales.document = new Document();
             iTextSharp.text.Rectangle docSize = new iTextSharp.text.Rectangle(250f, 400f);
             PdfWriter.GetInstance(Globales.document, new FileStream("Ticket.pdf", FileMode.OpenOrCreate));
             Globales.document.SetPageSize(docSize);
@@ -305,10 +306,10 @@ namespace TienditaLapeque
         {
             if (MessageBox.Show("¿Esta seguro de salir de la pantalla de ventas?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {
-
+                Globales.document.CloseDocument();
+                this.Close();
                 index frmindex = new index();
                 frmindex.Show();
-                this.Hide();
             }
         }
 

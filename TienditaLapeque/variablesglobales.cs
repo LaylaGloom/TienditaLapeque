@@ -10,7 +10,7 @@ namespace variablesGlobales
 {
     static class Globales
     {
-        public static Document document = new Document();
+        public static Document document;
         public static string usuario;
         public static string constraseña;
         public static int ap;
