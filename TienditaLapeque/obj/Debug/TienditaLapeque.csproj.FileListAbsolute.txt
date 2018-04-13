@@ -165,3 +165,5 @@ C:\Users\Jose Antonio\Desktop\8vo Cuatrimestre\RepositorioAne\TienditaLapeque\Ti
 C:\Users\Jose Antonio\Desktop\8vo Cuatrimestre\RepositorioAne\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.csproj.GenerateResource.Cache
 C:\Users\Jose Antonio\Desktop\8vo Cuatrimestre\RepositorioAne\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.exe.manifest
 C:\Users\Jose Antonio\Desktop\8vo Cuatrimestre\RepositorioAne\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.application
+D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\bin\Debug\itextsharp.dll
+D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\bin\Debug\itextsharp.xml

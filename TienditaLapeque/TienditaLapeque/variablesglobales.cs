@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+
 
 namespace variablesGlobales
 {
@@ -28,5 +30,6 @@ namespace variablesGlobales
         public static string recibido;
         public static string subtotal;
         public static int auxiliarid;
+        public static MySqlConnection conexion;
     }
 }

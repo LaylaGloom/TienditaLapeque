@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using variablesGlobales;
+
 
 namespace TienditaLapeque
 {
@@ -62,6 +64,7 @@ namespace TienditaLapeque
         {
 
             padre.Close();
+            Application.Exit();
         }
 
         private void AddFormInPanel(Form formHijo)

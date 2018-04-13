@@ -22,10 +22,11 @@ namespace TienditaLapeque
         }
         
         public MySqlConnection conexion = Conexion.getConexion();
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             tbxPass.UseSystemPasswordChar = true;
-            conexion.Open();
+            Conexion.abrir(conexion);
         }
 
         private void btnEnter_Click(object sender, EventArgs e)

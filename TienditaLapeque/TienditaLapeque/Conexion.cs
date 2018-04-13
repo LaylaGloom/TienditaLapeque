@@ -17,12 +17,29 @@ namespace TienditaLapeque
         public static MySqlConnection getConexion()
         {
             builder.Server = "localhost";
-            builder.UserID = "root";
+            builder.UserID = "Admin";
             builder.Port = 3307;
-            builder.Password = "1234";
+            builder.Password = "Admin1234";
             builder.Database = "sistema";
             MySqlConnection conexion = new MySqlConnection(builder.ToString());
             return conexion;
+        }
+
+        public static void abrir(MySqlConnection conexion)
+        {
+
+            if (conexion.State == ConnectionState.Closed)
+            {
+                conexion.Open();
+            }
+        }
+
+        public static void cerrar(MySqlConnection conexion)
+        {
+            if (conexion.State == ConnectionState.Open)
+            {
+                conexion.Close();
+            }
         }
     }
 }

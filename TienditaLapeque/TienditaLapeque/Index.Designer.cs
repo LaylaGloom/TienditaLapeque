@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.Contenedor = new System.Windows.Forms.Panel();
             this.btnVentas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -44,7 +45,7 @@
             this.Contenedor.BackColor = System.Drawing.Color.LightCoral;
             this.Contenedor.Location = new System.Drawing.Point(121, 69);
             this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(649, 452);
+            this.Contenedor.Size = new System.Drawing.Size(780, 560);
             this.Contenedor.TabIndex = 0;
             // 
             // btnVentas
@@ -66,7 +67,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 52);
+            this.panel2.Size = new System.Drawing.Size(1054, 52);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -136,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(782, 533);
+            this.ClientSize = new System.Drawing.Size(914, 639);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnPrestamos);
             this.Controls.Add(this.btnReportes);
@@ -144,6 +145,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.Contenedor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Index";
             this.Text = "Index";
             this.panel2.ResumeLayout(false);
