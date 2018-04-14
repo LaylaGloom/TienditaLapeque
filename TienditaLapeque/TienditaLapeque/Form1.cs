@@ -26,7 +26,7 @@ namespace TienditaLapeque
         private void Form1_Load(object sender, EventArgs e)
         {
             tbxPass.UseSystemPasswordChar = true;
-            Conexion.abrir(conexion);
+            Conexion.abrir();
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -79,20 +79,29 @@ namespace TienditaLapeque
                 }
                 else
                 {
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM usuarios WHERE nombre='" + tbxUsername.Text + "' AND contrasena='" + tbxPass.Text + "'", conexion);
-                    MySqlDataReader leer = cmd.ExecuteReader();
-                    Globales.usuario = tbxUsername.Text;
-                    Globales.constraseña = tbxPass.Text;
-                    if (leer.Read()) //Si el usuario es correcto nos abrira la otra ventana.
+                    try
                     {
-                        Index inde = new Index(this);
-                        Globales.idrango = Convert.ToInt16(leer["id_rango"]);
-                        inde.Show();
-                        this.Hide();
+                        MySqlCommand cmd = new MySqlCommand("SELECT * FROM usuarios WHERE nombre='" + tbxUsername.Text + "' AND contrasena='" + tbxPass.Text + "'", conexion);
+                        MySqlDataReader leer = cmd.ExecuteReader();
+                        Globales.usuario = tbxUsername.Text;
+                        Globales.constraseña = tbxPass.Text;
+                        if (leer.Read()) //Si el usuario es correcto nos abrira la otra ventana.
+                        {
+                            Index inde = new Index(this);
+                            Globales.idrango = Convert.ToInt16(leer["id_rango"]);
+                            inde.Show();
+                            this.Hide();
 
+                        }
+                        else //Si no lo es mostrara este mensaje.
+                            MessageBox.Show("Error - Ingrese sus datos correctamente");
+                        leer.Close();
                     }
-                    else //Si no lo es mostrara este mensaje.
-                        MessageBox.Show("Error - Ingrese sus datos correctamente");
+                    catch(MySqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
                 }
             }
         }

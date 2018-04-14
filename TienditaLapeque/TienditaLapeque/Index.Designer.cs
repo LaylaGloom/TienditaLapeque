@@ -45,7 +45,7 @@
             this.Contenedor.BackColor = System.Drawing.Color.LightCoral;
             this.Contenedor.Location = new System.Drawing.Point(121, 69);
             this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(780, 560);
+            this.Contenedor.Size = new System.Drawing.Size(600, 557);
             this.Contenedor.TabIndex = 0;
             // 
             // btnVentas
@@ -137,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(914, 639);
+            this.ClientSize = new System.Drawing.Size(730, 632);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnPrestamos);
             this.Controls.Add(this.btnReportes);

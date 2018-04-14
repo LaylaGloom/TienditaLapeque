@@ -79,7 +79,5 @@ namespace TienditaLapeque
             this.Contenedor.Tag = formHijo;
             formHijo.Show();
         }
-
-        
     }
 }

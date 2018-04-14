@@ -13,6 +13,7 @@ namespace TienditaLapeque
     class Conexion
     {
         static MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+        static MySqlConnection conexion;
 
         public static MySqlConnection getConexion()
         {
@@ -21,11 +22,11 @@ namespace TienditaLapeque
             builder.Port = 3307;
             builder.Password = "Admin1234";
             builder.Database = "sistema";
-            MySqlConnection conexion = new MySqlConnection(builder.ToString());
+            conexion = new MySqlConnection(builder.ToString());
             return conexion;
         }
 
-        public static void abrir(MySqlConnection conexion)
+        public static void abrir()
         {
 
             if (conexion.State == ConnectionState.Closed)
@@ -34,12 +35,32 @@ namespace TienditaLapeque
             }
         }
 
-        public static void cerrar(MySqlConnection conexion)
+        public static void cerrar()
         {
             if (conexion.State == ConnectionState.Open)
             {
                 conexion.Close();
             }
+        }
+
+
+        public static bool executeMyQuery(string query)
+        {
+            try
+            {
+                MySqlCommand command = new MySqlCommand(query, conexion);
+
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }                
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return false;
         }
     }
 }
