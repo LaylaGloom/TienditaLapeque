@@ -19,6 +19,7 @@ namespace TienditaLapeque
         public Index(Form1 padre_)
         {
             InitializeComponent();
+            dateHour.Enabled = true;
             padre = padre_;
 
         }
@@ -29,6 +30,8 @@ namespace TienditaLapeque
         {
             var form = Application.OpenForms.OfType<Ventas>().FirstOrDefault();
             Ventas hijo = form ?? new Ventas();
+            Index.ActiveForm.Width = Globales.tamañoInicial + 223;
+            Contenedor.Width = Globales.ContIndexInicial + 220;
             AddFormInPanel(hijo);
         }
 
@@ -36,6 +39,8 @@ namespace TienditaLapeque
         {
             var form = Application.OpenForms.OfType<Productos>().FirstOrDefault();
             Productos hijo = form ?? new Productos();
+            Index.ActiveForm.Width = Globales.tamañoInicial;
+            Contenedor.Width = Globales.ContIndexInicial;
             AddFormInPanel(hijo);
         }
 
@@ -79,5 +84,35 @@ namespace TienditaLapeque
             this.Contenedor.Tag = formHijo;
             formHijo.Show();
         }
+
+        private void Index_Load(object sender, EventArgs e)
+        {
+            Globales.tamañoInicial = this.Size.Width;
+            Globales.ContIndexInicial = Contenedor.Width;
+            if (Globales.idrango != 1)
+            {
+                btnUsuarios.Visible = false;
+                btnUsuarios.Enabled = false;
+            }
+            this.Text = "Inicio - Usuario: " + Globales.usuario;
+        }
+
+       
+
+        private void dateHour_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+            lblDate.Text= DateTime.Now.ToShortDateString();
+            lblUser.Text = Globales.usuario;
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            Form1 inde = new Form1();
+            inde.Show();
+            this.Close();
+        }
+
+       
     }
 }

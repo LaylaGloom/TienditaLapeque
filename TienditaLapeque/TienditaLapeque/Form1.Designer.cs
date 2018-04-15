@@ -87,7 +87,7 @@
             // btnEnter
             // 
             this.btnEnter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEnter.BackColor = System.Drawing.Color.Transparent;
+            this.btnEnter.BackColor = System.Drawing.Color.IndianRed;
             this.btnEnter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEnter.BackgroundImage")));
             this.btnEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnEnter.DialogResult = System.Windows.Forms.DialogResult.Cancel;

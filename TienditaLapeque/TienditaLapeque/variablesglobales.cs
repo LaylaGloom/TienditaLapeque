@@ -30,6 +30,7 @@ namespace variablesGlobales
         public static string recibido;
         public static string subtotal;
         public static int auxiliarid;
-        public static MySqlConnection conexion;
+        public static int tamañoInicial;
+        public static int ContIndexInicial;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using variablesGlobales;
 
 namespace TienditaLapeque
 {
@@ -71,6 +72,11 @@ namespace TienditaLapeque
         private void Productos_Load(object sender, EventArgs e)
         {
             RefrescarTabla();
+            if (Globales.idrango != 1)
+            {
+                btnDelete.Visible = false;
+                btnDelete.Enabled = false;
+            } 
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -90,7 +96,8 @@ namespace TienditaLapeque
             if (panelDatos.Visible)
                 panelDatos.Visible = false;
             btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            if (Globales.idrango == 1)
+                btnDelete.Enabled = true;
             btnSaveChang.Visible = false;
             btnSaveChang.Enabled = false;
             btnSaveAdd.Visible = false;

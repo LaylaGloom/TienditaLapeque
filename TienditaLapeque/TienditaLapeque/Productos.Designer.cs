@@ -37,6 +37,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panelDatos = new System.Windows.Forms.Panel();
+            this.btnSaveAdd = new System.Windows.Forms.Button();
             this.btnSaveChang = new System.Windows.Forms.Button();
             this.tbxPCant = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblCodP = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSaveAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.panelDatos.SuspendLayout();
             this.SuspendLayout();
@@ -167,6 +167,18 @@
             this.panelDatos.TabIndex = 10;
             this.panelDatos.Visible = false;
             // 
+            // btnSaveAdd
+            // 
+            this.btnSaveAdd.BackColor = System.Drawing.Color.LightCoral;
+            this.btnSaveAdd.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveAdd.Location = new System.Drawing.Point(450, 50);
+            this.btnSaveAdd.Name = "btnSaveAdd";
+            this.btnSaveAdd.Size = new System.Drawing.Size(109, 51);
+            this.btnSaveAdd.TabIndex = 12;
+            this.btnSaveAdd.Text = "Agregar Producto";
+            this.btnSaveAdd.UseVisualStyleBackColor = false;
+            this.btnSaveAdd.Click += new System.EventHandler(this.btnSaveAdd_Click);
+            // 
             // btnSaveChang
             // 
             this.btnSaveChang.BackColor = System.Drawing.Color.LightCoral;
@@ -260,18 +272,6 @@
             this.label2.Size = new System.Drawing.Size(156, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Código de producto:";
-            // 
-            // btnSaveAdd
-            // 
-            this.btnSaveAdd.BackColor = System.Drawing.Color.LightCoral;
-            this.btnSaveAdd.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveAdd.Location = new System.Drawing.Point(450, 50);
-            this.btnSaveAdd.Name = "btnSaveAdd";
-            this.btnSaveAdd.Size = new System.Drawing.Size(109, 51);
-            this.btnSaveAdd.TabIndex = 12;
-            this.btnSaveAdd.Text = "Agregar Producto";
-            this.btnSaveAdd.UseVisualStyleBackColor = false;
-            this.btnSaveAdd.Click += new System.EventHandler(this.btnSaveAdd_Click);
             // 
             // Productos
             // 

@@ -14,6 +14,7 @@ namespace TienditaLapeque
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -104,6 +105,11 @@ namespace TienditaLapeque
                     
                 }
             }
+        }
+
+        private void Form1_Closing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
