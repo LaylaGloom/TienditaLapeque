@@ -34,8 +34,6 @@ namespace TienditaLapeque
         private void tbxPPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsDigit(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(e.KeyChar=='.');
-            
-
             if (e.Handled = !(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == '.'))
             {
                 MessageBox.Show("No se admiten caracteres, letras ni números negativos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -106,7 +104,7 @@ namespace TienditaLapeque
 
         private void btnSaveChang_Click(object sender, EventArgs e)
         {
-            if (tbxPName.Text != "" && tbxPPrice.Text != "" && tbxPCant.Text != "")
+            if (tbxPName.Text != "" && tbxPPrice.Text != "" && tbxPPrice.Text != "0" && tbxPCant.Text != "" && tbxPCant.Text != "0")
             {
 
                 if (MessageBox.Show("¿Esta seguro de modificar este producto?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
@@ -122,7 +120,7 @@ namespace TienditaLapeque
             }
             else
             {
-                MessageBox.Show("Por favor llena todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error, campos vacios o con valor nulo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -150,7 +148,7 @@ namespace TienditaLapeque
 
         private void btnSaveAdd_Click(object sender, EventArgs e)
         {
-            if (tbxPName.Text != "" && tbxPPrice.Text != "" && tbxPCant.Text != "")
+            if (tbxPName.Text != "" && tbxPPrice.Text != "" &&  tbxPPrice.Text != "0" && tbxPCant.Text != "" && tbxPCant.Text != "0")
             {
                 if (MessageBox.Show("¿Esta seguro de agregar este producto?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
                 {
@@ -165,7 +163,7 @@ namespace TienditaLapeque
             }
             else
             {
-                MessageBox.Show("Por favor llena todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error, campos vacios o con valor nulo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -194,7 +192,7 @@ namespace TienditaLapeque
 
         private void tbxSearch_TextChanged(object sender, EventArgs e)
         {
-            if (tbxSearch.Text != null)
+            if (tbxSearch.Text != "")
             {
                 string searchQuery = "SELECT * FROM productos WHERE nom_producto LIKE '" + tbxSearch.Text + "%'";
                 MySqlCommand command = new MySqlCommand(searchQuery, conexion);

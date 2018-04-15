@@ -42,6 +42,13 @@ namespace TienditaLapeque
             Index.ActiveForm.Width = Globales.tamañoInicial;
             Contenedor.Width = Globales.ContIndexInicial;
             AddFormInPanel(hijo);
+            
+            if(MessageBox.Show("Desea cambiar de ventana?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+            {
+                //Globales.document.Close();
+                hijo.Close();
+            }
+            
         }
 
         private void btnPrestamos_Click(object sender, EventArgs e)

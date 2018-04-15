@@ -146,5 +146,6 @@ namespace TienditaLapeque
                     Globales.cantidad = Convert.ToString(leer["cant"]);
             }
         }*/
+        
     }
 }

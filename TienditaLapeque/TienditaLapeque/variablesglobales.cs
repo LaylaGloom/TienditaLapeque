@@ -32,5 +32,8 @@ namespace variablesGlobales
         public static int auxiliarid;
         public static int tamañoInicial;
         public static int ContIndexInicial;
+        public static decimal restante, deudaT, abono;
+        public static string updateQuery, deleteQuery;
+        public static bool EP_pagado=false;
     }
 }

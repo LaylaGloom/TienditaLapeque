@@ -32,3 +32,4 @@ D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\bin\
 D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\bin\Debug\TienditaLapeque.pdb
 D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\bin\Debug\MySql.Data.dll
 D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\bin\Debug\MySql.Data.xml
+D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.Prestamos.resources
