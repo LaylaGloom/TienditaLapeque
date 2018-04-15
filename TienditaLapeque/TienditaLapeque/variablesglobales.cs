@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 
 namespace variablesGlobales
@@ -11,6 +13,7 @@ namespace variablesGlobales
     static class Globales
     {
         public static string usuario;
+        public static Document document;
         public static string constraseña;
         public static int ap;
         public static string am;
@@ -18,7 +21,7 @@ namespace variablesGlobales
         public static string idproducto;
         public static string precio;
         public static string cantidad;
-        public static string idventa;
+        public static int idventa;
         public static string fechaventa;
         public static string productoventa;
         public static string producto;

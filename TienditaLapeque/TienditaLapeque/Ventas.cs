@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using variablesGlobales;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace TienditaLapeque
 {
@@ -17,6 +20,7 @@ namespace TienditaLapeque
         public Ventas()
         {
             InitializeComponent();
+            generarPdf();
         }
 
         public MySqlConnection conexion = Conexion.getConexion();
@@ -34,7 +38,20 @@ namespace TienditaLapeque
             dgvInventario.Columns[3].Width = 70;
             dgvInventario.Columns[3].HeaderText = "Cantidad";
         }
-
+        public void generarPdf()
+        {
+            Globales.document = new Document();
+            PdfWriter.GetInstance(Globales.document, new FileStream("Ticket.pdf", FileMode.OpenOrCreate));
+            iTextSharp.text.Rectangle docSize = new iTextSharp.text.Rectangle(250f, 400f);
+            Globales.document.SetPageSize(docSize);
+            Globales.document.Open();
+            iTextSharp.text.Paragraph parrafo1 = new Paragraph("/Tienda de Abarrotes la peque/");
+            parrafo1.Alignment = Element.ALIGN_CENTER;
+            Globales.document.Add(parrafo1);
+            Globales.document.Add(new Paragraph("Lo atendio: " + Globales.usuario));
+            Globales.document.Add(new Paragraph("Fecha de compra: " + DateTime.Now.ToLongDateString()));
+            Globales.document.Add(new Paragraph("Ticket de compra"));
+        }
         private void tbxPCant_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsDigit(e.KeyChar)) && !(char.IsControl(e.KeyChar));
@@ -120,8 +137,8 @@ namespace TienditaLapeque
             }
             else if (Convert.ToInt16(tbxPCant.Text) < Convert.ToInt16(Globales.cantidad))
             {
+                Globales.document.Add(new Paragraph("Producto:     " + lblPName.Text + "   Precio: " + lblPPrice.Text));
 
-                
             }
             else if(Convert.ToInt16(tbxPCant.Text) == Convert.ToInt16(Globales.cantidad))
             {
@@ -134,6 +151,19 @@ namespace TienditaLapeque
             {
                 MessageBox.Show("Error, la cantidad seleccionada supera la cantidad en almacén");
             }
+        }
+
+        private void btnTicket_Click(object sender, EventArgs e)
+        {
+            Globales.document.Add(new Paragraph("Total de la compra:" + Globales.totalventas));
+
+            Globales.document.Close();
+            System.Diagnostics.Process.Start("Ticket.pdf");
+        }
+
+        private void btnFinCompra_Click(object sender, EventArgs e)
+        {
+
         }
 
         /*public void ActualizarCantidad()

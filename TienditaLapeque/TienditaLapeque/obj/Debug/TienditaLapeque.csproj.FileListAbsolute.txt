@@ -32,4 +32,10 @@ D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\bin\
 D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\bin\Debug\TienditaLapeque.pdb
 D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\bin\Debug\MySql.Data.dll
 D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\bin\Debug\MySql.Data.xml
+<<<<<<< HEAD
 D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.Prestamos.resources
+=======
+C:\Users\Jose Antonio\Desktop\8vo Cuatrimestre\RepositorioAne\TienditaLapeque\TienditaLapeque\TienditaLapeque\bin\Debug\TienditaLapeque.exe.config
+C:\Users\Jose Antonio\Desktop\8vo Cuatrimestre\RepositorioAne\TienditaLapeque\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.exe
+C:\Users\Jose Antonio\Desktop\8vo Cuatrimestre\RepositorioAne\TienditaLapeque\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.pdb
+>>>>>>> refs/remotes/origin/master
