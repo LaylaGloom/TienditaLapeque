@@ -45,11 +45,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.gbxVenta = new System.Windows.Forms.GroupBox();
-            this.dgvVenta = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnTicket = new System.Windows.Forms.Button();
+            this.btnFinCompra = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvVenta = new System.Windows.Forms.DataGridView();
             this.gbxPSearch.SuspendLayout();
             this.panelDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -136,6 +136,7 @@
             this.panelDatos.Name = "panelDatos";
             this.panelDatos.Size = new System.Drawing.Size(269, 155);
             this.panelDatos.TabIndex = 12;
+            this.panelDatos.TabStop = true;
             this.panelDatos.Visible = false;
             // 
             // lblPPrice
@@ -248,8 +249,8 @@
             // gbxVenta
             // 
             this.gbxVenta.Controls.Add(this.button4);
-            this.gbxVenta.Controls.Add(this.button3);
-            this.gbxVenta.Controls.Add(this.button2);
+            this.gbxVenta.Controls.Add(this.btnTicket);
+            this.gbxVenta.Controls.Add(this.btnFinCompra);
             this.gbxVenta.Controls.Add(this.button1);
             this.gbxVenta.Controls.Add(this.dgvVenta);
             this.gbxVenta.Font = new System.Drawing.Font("Lucida Calligraphy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -260,16 +261,40 @@
             this.gbxVenta.TabStop = false;
             this.gbxVenta.Text = "Articulos agregados";
             // 
-            // dgvVenta
+            // button4
             // 
-            this.dgvVenta.AllowUserToAddRows = false;
-            this.dgvVenta.AllowUserToDeleteRows = false;
-            this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVenta.Location = new System.Drawing.Point(4, 23);
-            this.dgvVenta.Name = "dgvVenta";
-            this.dgvVenta.ReadOnly = true;
-            this.dgvVenta.Size = new System.Drawing.Size(382, 246);
-            this.dgvVenta.TabIndex = 12;
+            this.button4.BackColor = System.Drawing.Color.LightCoral;
+            this.button4.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(145, 376);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(106, 51);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Cancelar Compra";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // btnTicket
+            // 
+            this.btnTicket.BackColor = System.Drawing.Color.LightCoral;
+            this.btnTicket.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTicket.Location = new System.Drawing.Point(280, 282);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(106, 51);
+            this.btnTicket.TabIndex = 15;
+            this.btnTicket.Text = "Generar Ticket";
+            this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
+            // 
+            // btnFinCompra
+            // 
+            this.btnFinCompra.BackColor = System.Drawing.Color.LightCoral;
+            this.btnFinCompra.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinCompra.Location = new System.Drawing.Point(145, 282);
+            this.btnFinCompra.Name = "btnFinCompra";
+            this.btnFinCompra.Size = new System.Drawing.Size(106, 51);
+            this.btnFinCompra.TabIndex = 14;
+            this.btnFinCompra.Text = "Finalizar Compra";
+            this.btnFinCompra.UseVisualStyleBackColor = false;
+            this.btnFinCompra.Click += new System.EventHandler(this.btnFinCompra_Click);
             // 
             // button1
             // 
@@ -282,38 +307,16 @@
             this.button1.Text = "Quitar Producto";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // dgvVenta
             // 
-            this.button2.BackColor = System.Drawing.Color.LightCoral;
-            this.button2.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(145, 282);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 51);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Finalizar Compra";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.LightCoral;
-            this.button3.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(280, 282);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 51);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Generar Ticket";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.LightCoral;
-            this.button4.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(145, 376);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 51);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Cancelar Compra";
-            this.button4.UseVisualStyleBackColor = false;
+            this.dgvVenta.AllowUserToAddRows = false;
+            this.dgvVenta.AllowUserToDeleteRows = false;
+            this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVenta.Location = new System.Drawing.Point(4, 23);
+            this.dgvVenta.Name = "dgvVenta";
+            this.dgvVenta.ReadOnly = true;
+            this.dgvVenta.Size = new System.Drawing.Size(382, 246);
+            this.dgvVenta.TabIndex = 12;
             // 
             // Ventas
             // 
@@ -359,8 +362,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnTicket;
+        private System.Windows.Forms.Button btnFinCompra;
         private System.Windows.Forms.Button button1;
     }
 }
