@@ -48,7 +48,7 @@
             // 
             // Contenedor
             // 
-            this.Contenedor.BackColor = System.Drawing.Color.LightCoral;
+            this.Contenedor.BackColor = System.Drawing.Color.PeachPuff;
             this.Contenedor.Location = new System.Drawing.Point(121, 80);
             this.Contenedor.Name = "Contenedor";
             this.Contenedor.Size = new System.Drawing.Size(590, 557);

@@ -166,6 +166,12 @@ namespace TienditaLapeque
 
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Globales.ventana = 0;
+            this.Close();
+        }
+
         /*public void ActualizarCantidad()
         {
             query = new MySqlCommand("SELECT  cantidad as cant  from productos where nom_producto='" + tbxPCant.Text + "'", conexion);
@@ -176,6 +182,6 @@ namespace TienditaLapeque
                     Globales.cantidad = Convert.ToString(leer["cant"]);
             }
         }*/
-        
+
     }
 }

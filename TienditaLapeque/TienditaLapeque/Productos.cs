@@ -204,5 +204,11 @@ namespace TienditaLapeque
 
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Globales.ventana = 0;
+            this.Close();
+        }
     }
 }

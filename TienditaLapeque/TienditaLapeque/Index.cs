@@ -28,48 +28,84 @@ namespace TienditaLapeque
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            var form = Application.OpenForms.OfType<Ventas>().FirstOrDefault();
-            Ventas hijo = form ?? new Ventas();
-            Index.ActiveForm.Width = Globales.tamañoInicial + 223;
-            Contenedor.Width = Globales.ContIndexInicial + 220;
-            AddFormInPanel(hijo);
+            if (Globales.ventana!=1)
+            {
+               if(MessageBox.Show("Abrir ventana? Se perderán los cambios que no hayan sigo guardados", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    var form = Application.OpenForms.OfType<Ventas>().FirstOrDefault();
+                    Ventas hijo = form ?? new Ventas();
+                    Globales.ventana = 1;
+                    Index.ActiveForm.Width = Globales.tamañoInicial + 223;
+                    Contenedor.Width = Globales.ContIndexInicial + 220;
+                    AddFormInPanel(hijo);
+                }
+            }
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            var form = Application.OpenForms.OfType<Productos>().FirstOrDefault();
-            Productos hijo = form ?? new Productos();
-            Index.ActiveForm.Width = Globales.tamañoInicial;
-            Contenedor.Width = Globales.ContIndexInicial;
-            AddFormInPanel(hijo);
-            
-            if(MessageBox.Show("Desea cambiar de ventana?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+            if (Globales.ventana != 2)
             {
-                //Globales.document.Close();
-                hijo.Close();
+                if (MessageBox.Show("Abrir ventana? Se perderán los cambios que no hayan sigo guardados", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    var form = Application.OpenForms.OfType<Productos>().FirstOrDefault();
+                    Productos hijo = form ?? new Productos();
+                    Globales.ventana = 2;
+                    Index.ActiveForm.Width = Globales.tamañoInicial;
+                    Contenedor.Width = Globales.ContIndexInicial;
+                    AddFormInPanel(hijo);
+                }
             }
-            
         }
 
         private void btnPrestamos_Click(object sender, EventArgs e)
         {
-            var form = Application.OpenForms.OfType<Prestamos>().FirstOrDefault();
-            Prestamos hijo = form ?? new Prestamos();
-            AddFormInPanel(hijo);
+            if (Globales.ventana != 3)
+            {
+                if (MessageBox.Show("Abrir ventana? Se perderán los cambios que no hayan sigo guardados", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    var form = Application.OpenForms.OfType<Prestamos>().FirstOrDefault();
+                    Prestamos hijo = form ?? new Prestamos();
+                    Globales.ventana = 3;
+                    Index.ActiveForm.Width = Globales.tamañoInicial;
+                    Contenedor.Width = Globales.ContIndexInicial;
+                    AddFormInPanel(hijo);
+                }
+            }   
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            var form = Application.OpenForms.OfType<Reportes>().FirstOrDefault();
-            Reportes hijo = form ?? new Reportes();
-            AddFormInPanel(hijo);
+            if (Globales.ventana != 4)
+            {
+                if (MessageBox.Show("Abrir ventana? Se perderán los cambios que no hayan sigo guardados", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    var form = Application.OpenForms.OfType<Reportes>().FirstOrDefault();
+                    Reportes hijo = form ?? new Reportes();
+                    Globales.ventana = 4;
+                    Index.ActiveForm.Width = Globales.tamañoInicial;
+                    Contenedor.Width = Globales.ContIndexInicial;
+                    AddFormInPanel(hijo);
+                }
+            }
+                    
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            var form = Application.OpenForms.OfType<Usuarios>().FirstOrDefault();
-            Usuarios hijo = form ?? new Usuarios();
-            AddFormInPanel(hijo);
+            if (Globales.ventana != 5)
+            {
+                if (MessageBox.Show("Abrir ventana? Se perderán los cambios que no hayan sigo guardados", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    var form = Application.OpenForms.OfType<Usuarios>().FirstOrDefault();
+                    Usuarios hijo = form ?? new Usuarios();
+                    Globales.ventana = 5;
+                    Index.ActiveForm.Width = Globales.tamañoInicial;
+                    Contenedor.Width = Globales.ContIndexInicial;
+                    AddFormInPanel(hijo);
+                }
+            }
+                    
         }
 
         private void Index_Closing(object sender, FormClosingEventArgs e)
@@ -94,6 +130,7 @@ namespace TienditaLapeque
 
         private void Index_Load(object sender, EventArgs e)
         {
+            Globales.ventana = 0;
             Globales.tamañoInicial = this.Size.Width;
             Globales.ContIndexInicial = Contenedor.Width;
             if (Globales.idrango != 1)

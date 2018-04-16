@@ -252,6 +252,11 @@ namespace TienditaLapeque
                 MessageBox.Show("Deuda aun no saldada, favor de pagar en totalidad la deuda para eliminarla");
             }
         }
-        
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Globales.ventana = 0;
+            this.Close();
+        }
     }
 }

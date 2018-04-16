@@ -48,7 +48,7 @@ namespace TienditaLapeque
                     Globales.idrango = Convert.ToInt16(leer["id_rango"]);
                     conexion.Close();
                     conexion.Open();
-                    MySqlCommand idventa = new MySqlCommand("SELECT MAX(id_venta) as mayor FROM venta", conexion);
+                    MySqlCommand idventa = new MySqlCommand("SELECT MAX(id_venta) as mayor FROM ventas", conexion);
                     leer = idventa.ExecuteReader();
                     if (leer.Read())
                     {
@@ -100,7 +100,7 @@ namespace TienditaLapeque
                             Globales.idrango = Convert.ToInt16(leer["id_rango"]);
                             conexion.Close();
                             conexion.Open();
-                            MySqlCommand idventa = new MySqlCommand("SELECT MAX(id_venta) as mayor FROM venta", conexion);
+                            MySqlCommand idventa = new MySqlCommand("SELECT MAX(id_venta) as mayor FROM ventas", conexion);
                             leer = idventa.ExecuteReader();
                             if (leer.Read())
                             {

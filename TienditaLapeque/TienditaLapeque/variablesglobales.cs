@@ -36,7 +36,11 @@ namespace variablesGlobales
         public static int tamañoInicial;
         public static int ContIndexInicial;
         public static decimal restante, deudaT, abono;
-        public static string updateQuery, deleteQuery;
+        public static string updateQuery, deleteQuery, selectQuery;
         public static bool EP_pagado=false;
+        public static int ventana;
+        public static string fecha_ini, fecha_fin;
+        public static decimal tventa;
+        public static int tp_venta;
     }
 }

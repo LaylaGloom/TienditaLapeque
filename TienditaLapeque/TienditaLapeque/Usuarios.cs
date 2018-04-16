@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using variablesGlobales;
+using MySql.Data.MySqlClient;
 
 namespace TienditaLapeque
 {
@@ -15,6 +17,17 @@ namespace TienditaLapeque
         public Usuarios()
         {
             InitializeComponent();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Globales.ventana = 0;
+            this.Close();
+        }
+
+        private void Usuarios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

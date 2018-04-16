@@ -39,3 +39,5 @@ C:\Users\Jose Antonio\Desktop\8vo Cuatrimestre\RepositorioAne\TienditaLapeque\Ti
 C:\Users\Jose Antonio\Desktop\8vo Cuatrimestre\RepositorioAne\TienditaLapeque\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.exe
 C:\Users\Jose Antonio\Desktop\8vo Cuatrimestre\RepositorioAne\TienditaLapeque\TienditaLapeque\TienditaLapeque\obj\Debug\TienditaLapeque.pdb
 >>>>>>> refs/remotes/origin/master
+D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\bin\Debug\itextsharp.dll
+D:\Datos\Escritorio\TienditaLapeque ENTREGA\TienditaLapeque\TienditaLapeque\bin\Debug\itextsharp.xml
