@@ -110,6 +110,7 @@
             this.tbxPass.Size = new System.Drawing.Size(181, 25);
             this.tbxPass.TabIndex = 15;
             this.tbxPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxPass_KeyDown);
+            this.tbxPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPass_KeyPress);
             // 
             // tbxUsername
             // 

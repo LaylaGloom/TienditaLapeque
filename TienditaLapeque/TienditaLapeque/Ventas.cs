@@ -135,17 +135,14 @@ namespace TienditaLapeque
             {
                 MessageBox.Show("El campo cantidad no puede quedar vacio,ingrese un numero mayor a 0");
             }
-            else if (Convert.ToInt16(tbxPCant.Text) < Convert.ToInt16(Globales.cantidad))
+            else if (Convert.ToInt16(tbxPCant.Text) <= Convert.ToInt16(Globales.cantidad))
             {
-                Globales.document.Add(new Paragraph("Producto:     " + lblPName.Text + "   Precio: " + lblPPrice.Text));
+                dgvVenta.
+                if (Convert.ToInt16(tbxPCant.Text) == Convert.ToInt16(Globales.cantidad))
+                    MessageBox.Show("Se ha vendido la totalidad de la existencia del producto en almacén");
 
-            }
-            else if(Convert.ToInt16(tbxPCant.Text) == Convert.ToInt16(Globales.cantidad))
-            {
-               /* if(MessageBox.Show("La existencia del producto quedará agotada en almacén, continuar?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)){
+                //Globales.document.Add(new Paragraph("Producto:     " + lblPName.Text + "   Precio: " + lblPPrice.Text));
 
-                }*/
-                
             }
             else
             {

@@ -65,8 +65,8 @@ namespace TienditaLapeque
 
         private void tbxUsername_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !(char.IsLetterOrDigit(e.KeyChar)) && !(char.IsControl(e.KeyChar));
-            if(e.Handled =!((char.IsLetterOrDigit(e.KeyChar)) || (char.IsControl(e.KeyChar)) ))
+            e.Handled = !(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar));
+            if(e.Handled =!((char.IsLetter(e.KeyChar)) || (char.IsControl(e.KeyChar)) ))
             {
                 MessageBox.Show("No se admiten caracteres");
             }
@@ -86,7 +86,7 @@ namespace TienditaLapeque
                 {
                     MessageBox.Show("Ambos campos son requeridos, por favor completelos.");
                 }
-                else
+                else if(tbxPass.Text.Length>=8)
                 {
                     try
                     {
@@ -120,12 +120,25 @@ namespace TienditaLapeque
                     }
                     
                 }
+                else
+                {
+                    MessageBox.Show("La contraseña debe ser por lo menos de 8 caracteres");
+                }
             }
         }
 
         private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void tbxPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar)) && !(char.IsControl(e.KeyChar));
+            if (e.Handled = !((char.IsLetterOrDigit(e.KeyChar)) || (char.IsControl(e.KeyChar))))
+            {
+                MessageBox.Show("No se admiten caracteres");
+            }
         }
     }
 }

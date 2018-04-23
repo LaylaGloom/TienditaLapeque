@@ -150,10 +150,10 @@ namespace TienditaLapeque
                 }
                 else if (MessageBox.Show("¿Esta seguro de agregar este producto?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    string insertQuery = "INSERT INTO prestamos(nom_cliente, monto_deuda, monto_abono)VALUES('" + tbxCName.Text + "', '" + tbxCAdeudo.Text + "', '" + tbxCAbono.Text + "')";
+                    Globales.insertQuery = "INSERT INTO prestamos(nom_cliente, monto_deuda, monto_abono)VALUES('" + tbxCName.Text + "', '" + tbxCAdeudo.Text + "', '" + tbxCAbono.Text + "')";
                     LimpiarCampos();
                     panelAdd.Visible = false;
-                    if (Conexion.executeMyQuery(insertQuery))
+                    if (Conexion.executeMyQuery(Globales.insertQuery))
                         RefrescarTabla();
                     else
                         MessageBox.Show("Error en la conexión, intente mas tarde", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

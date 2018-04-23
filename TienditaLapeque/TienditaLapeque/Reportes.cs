@@ -41,19 +41,37 @@ namespace TienditaLapeque
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            Conexion.abrir();
-            Globales.selectQuery = "SELECT * FROM ventas WHERE fecha_venta  BETWEEN '"+ Globales.fecha_ini + "' AND '"+ Globales.fecha_fin +"'";
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(Globales.selectQuery, conexion);
-            
+            try
+            {
+                Conexion.abrir();
+                Globales.selectQuery = "SELECT * FROM ventas WHERE fecha_venta  BETWEEN '" + Globales.fecha_ini + "' AND '" + Globales.fecha_fin + "'";
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(Globales.selectQuery, conexion);
+
                 adapter.Fill(table);
                 dgvReporte.DataSource = table;
-            /*
-            Globales.selectQuery= "SELECT SUM(subtotal) AS total FROM ventas WHERE fecha_venta BETWEEN '" + Globales.fecha_ini + "' AND '" + Globales.fecha_fin + "'";
-            MySqlCommand variables = new MySqlCommand();
-            variables.CommandText=Globales.selectQuery;
-            Globales.tventa=Convert.ToDecimal(variables.ExecuteScalar());
-            lblTVendido.Text = Globales.tventa.ToString();*/
+                Conexion.cerrar();
+                Conexion.abrir();
+                Globales.selectQuery = "SELECT SUM(subtotal) AS total, sum(cp_vendidos) as productos FROM ventas WHERE fecha_venta BETWEEN '" + Globales.fecha_ini + "' AND '" + Globales.fecha_fin + "'";
+                MySqlCommand variables = new MySqlCommand(Globales.selectQuery, conexion);
+                MySqlDataReader leer = variables.ExecuteReader();
+                if (leer.Read())
+                {
+                    if (leer["total"].ToString() != "" && leer["productos"].ToString() != "")
+                    {
+                        Globales.tventa = Convert.ToDouble(leer["total"]);
+                        Globales.tp_venta = Convert.ToInt16(leer["productos"]);
+                        lblTVendido.Text = Convert.ToString(Globales.tventa);
+                        lblTProductos.Text = Convert.ToString(Globales.tp_venta);
+                    }  
+                }
+                Conexion.cerrar();
+            }
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

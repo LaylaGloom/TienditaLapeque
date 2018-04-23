@@ -30,7 +30,7 @@ namespace TienditaLapeque
         {
             if (Globales.ventana!=1)
             {
-               if(MessageBox.Show("Abrir ventana? Se perderán los cambios que no hayan sigo guardados", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+               if(MessageBox.Show("Abrir ventana? Se perderán los cambios que no hayan sido guardados", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
                 {
                     var form = Application.OpenForms.OfType<Ventas>().FirstOrDefault();
                     Ventas hijo = form ?? new Ventas();

@@ -40,10 +40,10 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblTVendido = new System.Windows.Forms.Label();
             this.lblTProductos = new System.Windows.Forms.Label();
+            this.lblTVendido = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -142,7 +142,7 @@
             // 
             this.btnConsultar.BackColor = System.Drawing.Color.LightCoral;
             this.btnConsultar.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(133, 455);
+            this.btnConsultar.Location = new System.Drawing.Point(247, 455);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(106, 51);
             this.btnConsultar.TabIndex = 25;
@@ -160,6 +160,7 @@
             this.btnImprimir.TabIndex = 26;
             this.btnImprimir.Text = "Imprimir Reporte";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Visible = false;
             // 
             // panel1
             // 
@@ -172,15 +173,23 @@
             this.panel1.Size = new System.Drawing.Size(532, 69);
             this.panel1.TabIndex = 27;
             // 
-            // label5
+            // lblTProductos
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(88, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 17);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Total monto vendido:";
+            this.lblTProductos.AutoSize = true;
+            this.lblTProductos.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTProductos.Location = new System.Drawing.Point(257, 39);
+            this.lblTProductos.Name = "lblTProductos";
+            this.lblTProductos.Size = new System.Drawing.Size(0, 17);
+            this.lblTProductos.TabIndex = 26;
+            // 
+            // lblTVendido
+            // 
+            this.lblTVendido.AutoSize = true;
+            this.lblTVendido.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTVendido.Location = new System.Drawing.Point(257, 12);
+            this.lblTVendido.Name = "lblTVendido";
+            this.lblTVendido.Size = new System.Drawing.Size(0, 17);
+            this.lblTVendido.TabIndex = 25;
             // 
             // label6
             // 
@@ -192,23 +201,15 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Total productos vendidos:";
             // 
-            // lblTVendido
+            // label5
             // 
-            this.lblTVendido.AutoSize = true;
-            this.lblTVendido.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTVendido.Location = new System.Drawing.Point(257, 12);
-            this.lblTVendido.Name = "lblTVendido";
-            this.lblTVendido.Size = new System.Drawing.Size(0, 17);
-            this.lblTVendido.TabIndex = 25;
-            // 
-            // lblTProductos
-            // 
-            this.lblTProductos.AutoSize = true;
-            this.lblTProductos.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTProductos.Location = new System.Drawing.Point(257, 39);
-            this.lblTProductos.Name = "lblTProductos";
-            this.lblTProductos.Size = new System.Drawing.Size(0, 17);
-            this.lblTProductos.TabIndex = 26;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(88, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(167, 17);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Total monto vendido:";
             // 
             // Reportes
             // 
